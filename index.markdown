@@ -4,23 +4,28 @@ title: "Welcome Adventurers!"
 ---
 
 ##  Thanks Visiting
-We’re running a **Dungeons & Dragons game** at the High Prairie Library. I'll be DMing for my kids between the ages of 9-16. If you'd like to sign your kid up please send me a text or email! I'll be happy to help them make a character, and I can teach them to play if they are new. 
+I'm running a **Dungeons & Dragons game** at the High Prairie Library. I'll be DMing for my kids between the ages of 9-16. If you'd like to sign your kid up please send me a text or email! I'll be happy to help them make a character, and I can teach them to play if they are new. 
 
 ---
 
 ##  Schedule
 <div class="box">
-- **Every Wednesday, 4:00 PM – 5:30 PM**  
-- High Prairie Library (Falcon, CO) — Meeting Room
+  <p><strong>Where:</strong> 
+    <a href="https://www.google.com/maps/place/7035+Meridian+Rd,+Peyton,+CO+80831" target="_blank">
+      High Prairie Library - Meeting Room
+    </a>
+  </p>
+  <p><strong>When:</strong> Every Wednesday at 4:00 PM to 5:30 PM</p>
 </div>
 
 ---
 
 ##  Contact
 <div class="box">
-**Email:** mark@spookydungeon.boo  
-**Phone:** (360) 644-7050
+<p><strong>Email:</strong> <a href="mailto:mark@spookydungeon.boo">mark@spookydungeon.boo</a></p>
+<p><strong>Phone:</strong> <a href="tel:13606447050">(360) 644-7050</a></p>
 </div>
+
 
 ---
 
