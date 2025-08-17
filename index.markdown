@@ -12,7 +12,7 @@ Your child is not required to bring anything specific with them, but there are s
 Thanks for reading, and we look forward to meeting some new adventurers!
 
 
-##  Schedule
+##  <a href="{{ '/schedule/' | relative_url }}">Schedule</a>
 <div class="box">
   <p><strong>Where:</strong> 
     <a href="https://www.google.com/maps/place/7035+Meridian+Rd,+Peyton,+CO+80831" target="_blank">
@@ -20,11 +20,12 @@ Thanks for reading, and we look forward to meeting some new adventurers!
     </a>
   </p>
   <p><strong>When:</strong> Every Wednesday from 4:00 PM to 5:30 PM</p>
+  <p>Please check the <a href="{{ '/schedule/' | relative_url }}">Schedule page</a> for any cancellations or alerts.</p>
 </div>
 
 
 
-##  Contact Info
+##  <a href="{{ '/contact/' | relative_url }}">Contact Info</a>
 <div class="box">
 <p><strong>Email:</strong> <a href="mailto:mark@spookydungeon.boo">mark@spookydungeon.boo</a></p>
 <p><strong>Phone:</strong> <a href="tel:13606447050">(360) 644-7050</a></p>
