@@ -1,39 +1,35 @@
-/* Dungeon wall background */
 body {
-  background-color: #2b2433; /* dark purplish-grey */
-  background-image: url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
+  background-color: #2b2433; /* dark purplish-grey base */
+  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/49326686-9a34-428c-b966-8b0727cae844/dbb0mx3-998de3a6-a105-4e92-91cf-86adeabad659.jpg/v1/fit/w_600,h_600,q_70,strp/dungeon_wall___classic_tile_by_zachvance_dbb0mx3-375w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjAwIiwicGF0aCI6IlwvZlwvNDkzMjY2ODYtOWEzNC00MjhjLWI5NjYtOGIwNzI3Y2FlODQ0XC9kYmIwbXgzLTk5OGRlM2E2LWExMDUtNGU5Mi05MWNmLTg2YWRlYWJhZDY1OS5qcGciLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.DliqpopYmYd2bogUFHmQs9aS97C1vCI1HPRQOBOEmtk'); /* new tileable stone texture */
   background-repeat: repeat;
-  font-family: "Georgia", serif;
-  color: #f0e6ff; /* soft pale text */
+  font-family: Georgia, serif;
+  color: #f0e6ff;
   line-height: 1.6;
   margin: 0;
   padding: 0;
+  text-align: center; /* center all text */
 }
 
-/* Header and footer with different shade */
 header, footer {
-  background-color: #3a3045; 
+  background-color: #3a3045;
   padding: 1rem;
-  text-align: center;
-  color: #ffffff;
+  color: #fff;
   border-top: 4px solid #1f1825;
   border-bottom: 4px solid #1f1825;
 }
 
-/* Content box styling */
 .box {
-  background-color: rgba(50, 40, 60, 0.85); /* translucent dungeon box */
+  background-color: rgba(50, 40, 60, 0.85);
   border: 2px solid #1f1825;
   border-radius: 8px;
   padding: 1rem 1.5rem;
-  margin: 1rem auto;
+  margin: 1.5rem auto;
   max-width: 700px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Links */
 a {
-  color: #a78bfa; /* magical purple */
+  color: #a78bfa;
   text-decoration: none;
 }
 a:hover {
