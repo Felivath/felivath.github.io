@@ -1,7 +1,8 @@
 ---
-layout: home
+layout: default
 ---
 
+# Welcome Adventurers!
 We’re running a **Dungeons & Dragons game** at the High Prairie Library. I'll be DMing for my kids between the ages of 9-16. If you'd like to sign your kid up please send me a text or email! I'll be happy to help them make a character, and I can teach them to play if they are new. 
 
 ## 📅 Schedule
