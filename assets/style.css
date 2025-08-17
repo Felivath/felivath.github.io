@@ -1,39 +1,38 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 body {
   background-color: #2b2433;
+  background-image: url('/assets/images/DungeonTile.jpg');
+  background-repeat: repeat;
+  background-size: auto;
+  background-blend-mode: multiply;
   font-family: Georgia, serif;
   color: #f0e6ff;
   line-height: 1.6;
-  margin: 0;
-  padding: 0;
   text-align: center;
-  position: relative;
-  z-index: 0;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('/assets/images/DungeonTile.jpg') repeat;
-  filter: grayscale(100%) brightness(0.5);
-  opacity: 0.25;
-  pointer-events: none;
-  z-index: -1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 header, footer {
   background-color: #3a3045;
   background-image: url('/assets/images/DungeonTile.jpg');
   background-repeat: repeat;
-  filter: grayscale(100%) brightness(0.5);
+  background-size: auto;
+  background-blend-mode: multiply;
   padding: 1rem;
   color: #fff;
   border-top: 4px solid #1f1825;
   border-bottom: 4px solid #1f1825;
   text-shadow: 1px 1px 2px #000;
+}
+
+main {
+  flex: 1;
 }
 
 .box {
