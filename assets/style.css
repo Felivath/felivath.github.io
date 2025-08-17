@@ -1,58 +1,42 @@
+/* Dungeon wall background */
 body {
+  background-color: #2b2433; /* dark purplish-grey */
+  background-image: url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
+  background-repeat: repeat;
+  font-family: "Georgia", serif;
+  color: #f0e6ff; /* soft pale text */
+  line-height: 1.6;
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f3ede4;
-  color: #333;
+  padding: 0;
 }
 
-.page-header {
-  background-color: #5d399e;
-  color: #f3ede4;
+/* Header and footer with different shade */
+header, footer {
+  background-color: #3a3045; 
   padding: 1rem;
   text-align: center;
+  color: #ffffff;
+  border-top: 4px solid #1f1825;
+  border-bottom: 4px solid #1f1825;
 }
 
-.container {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 1.5rem;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-h1 { margin-top: 0; }
-
-h2 {
-  color: #5d399e;
-  border-bottom: 2px solid #e1d9c0;
-  padding-bottom: 0.3rem;
-  margin-top: 1.5rem;
-}
-
-.section {
-  margin-top: 1rem;
-}
-
+/* Content box styling */
 .box {
-  border: 1px solid #e1d9c0;
-  padding: 1rem;
-  border-radius: 6px;
-  margin-bottom: 1rem;
+  background-color: rgba(50, 40, 60, 0.85); /* translucent dungeon box */
+  border: 2px solid #1f1825;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin: 1rem auto;
+  max-width: 700px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
+/* Links */
 a {
-  color: #5d399e;
+  color: #a78bfa; /* magical purple */
   text-decoration: none;
 }
-
 a:hover {
+  color: #d8b4fe;
   text-decoration: underline;
-}
-
-.page-footer {
-  text-align: center;
-  font-size: 0.9rem;
-  color: #777;
-  padding: 1rem;
 }
