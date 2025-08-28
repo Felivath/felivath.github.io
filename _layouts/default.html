@@ -26,6 +26,7 @@ function toggleMenu() {
       <a href="{{ '/' | relative_url }}">Home</a>
       <a href="{{ '/schedule/' | relative_url }}">Schedule</a>
       <a href="{{ '/contact/' | relative_url }}">Contact</a>
+      <a href="{{ '/gallery/' | relative_url }}">Gallery</a>
     </nav>
   </header>
 
@@ -38,4 +39,60 @@ function toggleMenu() {
     <strong>Phone:</strong> <a href="tel:13606447050">(360) 644-7050</a></p>
   </footer>
 </body>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const images = document.querySelectorAll(".gallery-item img");
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const closeBtn = document.querySelector(".lightbox .close");
+  const prevBtn = document.querySelector(".lightbox .prev");
+  const nextBtn = document.querySelector(".lightbox .next");
+
+  let currentIndex = 0;
+
+  function showImage(index) {
+    if (index < 0) index = images.length - 1;
+    if (index >= images.length) index = 0;
+    currentIndex = index;
+    lightboxImg.src = images[currentIndex].src;
+  }
+
+  images.forEach((img, index) => {
+    img.addEventListener("click", () => {
+      lightbox.style.display = "flex";
+      showImage(index);
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    lightbox.style.display = "none";
+  });
+
+  prevBtn.addEventListener("click", () => {
+    showImage(currentIndex - 1);
+  });
+
+  nextBtn.addEventListener("click", () => {
+    showImage(currentIndex + 1);
+  });
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = "none";
+    }
+  });
+
+  // Optional: keyboard navigation
+  document.addEventListener("keydown", (e) => {
+    if (lightbox.style.display === "flex") {
+      if (e.key === "ArrowLeft") showImage(currentIndex - 1);
+      if (e.key === "ArrowRight") showImage(currentIndex + 1);
+      if (e.key === "Escape") lightbox.style.display = "none";
+    }
+  });
+});
+</script>
+
+
 </html>
