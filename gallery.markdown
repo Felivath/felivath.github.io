@@ -6,12 +6,12 @@ permalink: /gallery/
 
 
 <div class="gallery">
-  {% for image in site.static_files %}
-    {% if image.path contains 'assets/gallery' %}
-      <div class="gallery-item">
-        <img src="{{ image.path | relative_url }}" alt="Gallery image">
-      </div>
-    {% endif %}
+  {% assign thumbs = site.static_files | where_exp: "file", "file.path contains 'assets/gallery/thumbs'" %}
+  {% for thumb in thumbs %}
+    {% assign full = thumb.path | replace: '/thumbs', '/full' %}
+    <div class="gallery-item">
+      <img src="{{ thumb.path | relative_url }}" data-full="{{ full | relative_url }}" alt="Gallery image">
+    </div>
   {% endfor %}
 </div>
 

@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (index < 0) index = images.length - 1;
     if (index >= images.length) index = 0;
     currentIndex = index;
-    lightboxImg.src = images[currentIndex].src;
+    lightboxImg.src = images[currentIndex].dataset.full || images[currentIndex].src;
   }
 
   images.forEach((img, index) => {
@@ -83,7 +83,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
-  // Optional: keyboard navigation
   document.addEventListener("keydown", (e) => {
     if (lightbox.style.display === "flex") {
       if (e.key === "ArrowLeft") showImage(currentIndex - 1);
@@ -93,6 +92,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 </script>
+
 
 
 </html>
