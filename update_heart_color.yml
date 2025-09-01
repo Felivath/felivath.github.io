@@ -1,0 +1,68 @@
+name: Update Heart Color
+on:
+  issues:
+    types: [opened, edited, reopened]
+
+jobs:
+  update:
+    if: contains(github.event.issue.labels.*.name, 'heart-color')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Extract fields from issue form
+        id: parse
+        run: |
+          # GitHub Issue Forms render as plain text in the body.
+          # We'll grep for lines like "Color (hex):" and "Brightness (0–255):"
+          body=$(jq -r '.issue.body' <<< '${{ toJson(github.event) }}')
+          hex=$(printf "%s" "$body" | sed -n 's/^Color (hex):[[:space:]]*//p' | head -n1)
+          bri=$(printf "%s" "$body" | sed -n 's/^Brightness (0–255):[[:space:]]*//p' | head -n1)
+
+          # Basic validation/cleanup
+          hex=$(printf "%s" "$hex" | tr -d '[:space:]')
+          case "$hex" in
+            \#??????) ;; # ok
+            ??????) hex="#$hex" ;;
+            *) echo "Invalid hex color: $hex"; exit 1 ;;
+          esac
+
+          if ! echo "$bri" | grep -Eq '^[0-9]+$'; then
+            echo "Invalid brightness: $bri"; exit 1
+          fi
+          if [ "$bri" -lt 0 ] || [ "$bri" -gt 255 ]; then
+            echo "Brightness out of range: $bri"; exit 1
+          fi
+
+          echo "hex=$hex" >> $GITHUB_OUTPUT
+          echo "brightness=$bri" >> $GITHUB_OUTPUT
+
+      - name: Write color.json
+        run: |
+          cat > color.json <<EOF
+          {
+            "hex": "${{ steps.parse.outputs.hex }}",
+            "brightness": ${{ steps.parse.outputs.brightness }},
+            "mode": "solid"
+          }
+          EOF
+
+      - name: Commit & push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add color.json
+          git commit -m "Update color.json to ${{ steps.parse.outputs.hex }} @ ${{ steps.parse.outputs.brightness }}"
+          git push
+
+      - name: Comment and close issue
+        run: |
+          gh issue comment ${{ github.event.issue.number }} \
+            --body "✅ Updated **color.json** to \`${{ steps.parse.outputs.hex }}\` at brightness \`${{ steps.parse.outputs.brightness }}\`. The heart will pick it up on its next poll."
+          gh issue close ${{ github.event.issue.number }} --comment "Done!"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
